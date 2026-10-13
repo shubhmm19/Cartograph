@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Cartograph maps a public TypeScript or JavaScript repository from its real imports. Phase 03 provides the standalone repository parser and CLI.
+
+## Parse a repository
+
+Install dependencies, then run the parser against any directory already on disk:
+
+```bash
+pnpm install
+pnpm parse:repo /path/to/repository
+pnpm parse:repo /path/to/repository --output /tmp/cartograph-analysis.json
+```
+
+The parser reads TypeScript and JavaScript files without starting Next.js or making network requests. It prints file totals, folder counts, dependency coverage and skip reasons. The optional JSON output follows the contract in `lib/parser/types.ts`; the CLI reads it back and validates the contract before it exits.
+
+The parser keeps source files from the repository and skips dependency/build directories such as `node_modules`, `.git`, `.next`, `dist` and `build`. Imports that resolve to excluded files, external packages or unresolved paths remain visible in the coverage report.
+
+## Run the web app
+
+This is a [Next.js](https://nextjs.org) app.
 
 ## Getting Started
 
