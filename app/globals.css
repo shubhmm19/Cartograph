@@ -8,6 +8,8 @@
   --muted: #687482;
   --border: #dce2e8;
   --accent: #2563eb;
+  --status-success: #137a4b;
+  --status-failed: #b42318;
 }
 
 :root[data-theme="dark"] {
@@ -18,6 +20,8 @@
   --muted: #98a5b3;
   --border: #303a45;
   --accent: #76a7ff;
+  --status-success: #68dba1;
+  --status-failed: #ff8e8e;
 }
 
 @theme inline {
@@ -27,6 +31,8 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-status-success: var(--status-success);
+  --color-status-failed: var(--status-failed);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
